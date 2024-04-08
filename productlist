@@ -106,3 +106,8 @@ const electronicProducts = [
 ];
 
 console.log(electronicProducts);
+1) display model form the list?
+2) search  model from the list?
+3) display product  by price value below 100?
+4) delete   a particular product?
+5) update a particular  product?
