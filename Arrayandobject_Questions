@@ -1,0 +1,34 @@
+Array Manipulation:
+
+Reversing an array.
+Removing duplicates from an array.
+Finding the intersection or union of two arrays.
+Sorting arrays based on certain criteria.
+Implementing common array methods (e.g., map, filter, reduce) from scratch.
+Rotating an array to the left or right by a given number of positions.
+Checking if two arrays are equal.
+Object Manipulation:
+
+Adding, updating, or deleting properties from an object.
+Deep cloning an object.
+Checking if an object has a specific property.
+Merging two objects while handling conflicts.
+Iterating over object properties.
+Converting object keys or values into an array.
+Implementing common object methods (e.g., Object.keys, Object.values) from scratch.
+Algorithmic Challenges:
+
+Searching and sorting algorithms involving arrays of objects.
+Solving problems like finding the maximum subarray sum, longest increasing subsequence, etc.
+Implementing data structures like stacks, queues, or hash maps using arrays or objects.
+Solving problems related to dynamic programming, graph traversal, or recursion where arrays or objects are involved.
+Performance Optimization:
+
+Optimizing code for time complexity and space complexity.
+Understanding the performance implications of different array and object operations (e.g., accessing elements, adding/removing elements).
+Using appropriate data structures (arrays vs. objects) based on the requirements of the problem.
+Functional Programming:
+
+Using array methods like map, filter, and reduce to manipulate arrays in a functional style.
+Composing functions to achieve complex transformations on arrays or objects.
+Understanding concepts like immutability and pure functions and applying them in array and object manipulation.
