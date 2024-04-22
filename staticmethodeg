@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      
+      class Cameringroup{
+        static Pi=3.14;
+        static address(address){
+            console.log(address)
+        }
+      }
+      class camerinfolks extends Cameringroup{
+         display(){
+            Cameringroup.address("CamerinGroup")
+            console.log("camerinfolks")
+         }
+      }
+      class camerininovatative extends Cameringroup{
+        display2(){
+            console.log("camerininovatative")
+        }
+      }
+      class camerinkid extends Cameringroup{
+        display3(){
+            console.log("camerinkid")
+        }
+      }
+
+      let folks=new camerinfolks()
+      let inno=new camerininovatative()
+      let kid =new camerinkid()
+      
+      folks.display()
+    
+
+
+   
+    </script>
+</body>
+</html>
