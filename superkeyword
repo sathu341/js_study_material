@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //    class Birds{
+    //     fly(){
+    //         console.log("All birds can fly  but somecannot")
+    //     }
+    //    }
+    //    class Sparrow{
+    //     fly(){
+    //         console.log("All Sparrow can fly")
+    //     }
+    //    }
+    //    let sparrow=new Sparrow()
+    //    sparrow.fly()
 
+
+       class Person{
+        constructor(firstname,lastname){
+            this.fname=firstname
+            this.lname=lastname
+        }
+       }
+       class Employee extends Person{
+        
+        constructor(department,designation,fname,lname){
+            super(fname,lname)
+            this.dep=department
+            this.des=designation 
+
+        }
+        display(){
+           console.log(this.dep,this.des)
+           console.log(this.fname,this.lname)
+           
+        }
+       }
+       let ram=new Employee('it',"developer",'ram','krishna')
+       ram.display()
+     </script>
+</body>
+</html>
