@@ -43,3 +43,54 @@
     </script>
 </body>
 </html>
+
+/* 
+ class A{
+
+        }
+        class B extends A{
+
+        }
+        class C extends A{
+
+        }
+
+        //multilevel
+        class Parent{
+          f(){
+
+          }
+        }
+        class Level1 extends Parent{
+          l1(){
+
+          }
+        }
+        class Level2 extends Level1{
+               l2(){
+
+               }
+        }
+
+        class Level3 extends Level2{
+
+        }
+        //multiples
+        class P1{
+           start(){
+
+           }
+        }
+        class P2{
+          start(){
+
+          }
+        }
+        class C extends P1,P2{
+
+        }
+        let c =new C()
+        c.start()
+
+
+*/
