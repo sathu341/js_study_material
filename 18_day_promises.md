@@ -102,8 +102,11 @@ doSomething((err, result) => {
 // after 2 seconds it will print the skills
 ["HTML", "CSS", "JS"]
 ```
-//Asynchronous
-/*function countdown(seconds) {
+### Asynchronous
+```js
+//code :
+
+ function countdown(seconds) {
   console.log(`Starting countdown for ${seconds} seconds...`);
   let timer = setInterval(function() {
     seconds--;
@@ -117,8 +120,8 @@ doSomething((err, result) => {
 }
 
 // Call the countdown function to start a countdown from 5 seconds
-countdown(100);
-*/
+countdown(100); ```js
+
 
 ### Promise constructor
 
