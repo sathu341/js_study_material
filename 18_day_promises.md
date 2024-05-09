@@ -122,7 +122,7 @@ doSomething((err, result) => {
 // Call the countdown function to start a countdown from 5 seconds
 countdown(100); ```js
 
-
+```js
 ### Promise constructor
 
 We can create a promise using the Promise constructor. We can create a new promise using the key word `new` followed by the word `Promise` and followed by a parenthesis. Inside the parenthesis, it takes a `callback` function. The promise callback function has two parameters which are the _`resolve`_ and _`reject`_ functions.
