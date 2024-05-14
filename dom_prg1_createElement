@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+</head>
+<body>
+ <button onclick="createButton()"> create button</button>
+
+    <script>
+        // let h1=document.createElement("h1")
+        // h1.textContent="creating h1 tag"
+        // document.body.appendChild(h1)
+        // console.log(h1)
+
+        
+        function  createButton(){
+        let color=["white",'green',"red"]
+        for(let i=0;i<3;i++){
+            let btn=document.createElement("button")
+            btn.textContent=i;
+            btn.style.backgroundColor=color[i]
+            document.body.appendChild(btn)
+
+        }
+        
+    }
+    function createTextBox(number){
+           for(let j=0;j<number;j++){
+            let inp=document.createElement('input');
+            inp.type="text"
+            inp.value=j 
+            inp.style.width="200px"
+            inp.style.height="90px"
+            inp.id="inp"+j
+            document.body.appendChild(inp)
+
+           }
+        }
+      createTextBox(3)
+
+      let num=23;
+      console.log('num ',num)
+       </script>
+
+       <input type="text" name="fname" id="fname"/>
+</body>
+</html>
