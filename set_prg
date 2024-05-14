@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numbers=new Set();
+        console.log(numbers)
+        
+        let arrays=[2,4,5,6,7,4,5,6]//create a array
+        let newNumbers=new Set(arrays)//add array to  set
+        console.log(newNumbers)
+        newNumbers.add("Apple")
+        console.log(newNumbers)
+        console.log("display set ")
+        for(const number of newNumbers){
+            console.log(number)
+        }
+        console.log("delete   2 form set")
+        newNumbers.delete(2)
+        console.log(newNumbers)
+    </script>
+</body>
+</html>
