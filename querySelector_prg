@@ -25,11 +25,12 @@
     <script>
         function createPrice(){
             let price=document.getElementById("CandyPrice");
+            let discount=document.querySelector("#CandyDiscount");
             let display=document.querySelector(".pricedisplay");
             if(price.value!=""){
                 display.style.color="green"
             display.style.border="2px solid blue"
-            display.innerHTML=price.value
+            display.innerHTML=price.value-(price.value*discount.value/100)
             }
             else{
                 display.style.color="red"
