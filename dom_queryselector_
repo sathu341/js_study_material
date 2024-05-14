@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="errorMessage"></h1>
+    <form  method="post">
+        <p>
+            <input type="text" name="fname" placeholder="full name" id="fname"/>
+            
+        </p>
+        <p>
+            <input type="tel" name="mob" placeholder="mobile" id="mob"/>
+        </p>
+        <p>
+            <input type="email" name="email" placeholder="email" id="email"/>
+        </p>
+        <p>
+            <input type="password" name="password" placeholder="password" id="password"/>
+        </p>
+        <p>
+            <button  type="button" onclick="handlerSubmit()">
+                save
+            </button>
+        </p>
+    </form>
+
+    <script>
+        function  handlerSubmit(e){
+       
+          
+          
+          let inp=document.getElementsByTagName("input")
+          for(let i=0; inp.length>i;i++){
+            console.log(inp[i].value)
+            let ch=checkEmpty(inp[i].value)
+            if(!ch){
+                alert(`${inp[i].name} is required`)
+                document.querySelector("#errorMessage").innerHTML=`${inp[i].name} is required`;
+                let err=document.querySelector("#errorMessage").innerHTML
+                console.log(err)
+                document.querySelector(`#${inp[i].id}`).value=`${inp[i].name} is required`
+
+            }
+          }
+          console.log(inp)
+          
+          return false
+        }
+        function  checkEmpty(value){
+           if(value==""){
+               return(false)
+           }
+           else{
+            return true
+           }
+        }
+    </script>
+</body>
+</html>
