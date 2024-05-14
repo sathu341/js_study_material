@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <label>Candy Price</label>
+        <input type="text" name="CandyPrice" id="CandyPrice" />
+        <br/>
+        <br>
+        <label>Candy Discount</label>
+        <input type="text" name="CandyDiscount" id="CandyDiscount" />
+        <p class="pricedisplay">
+
+        </p>
+        
+    </p>
+    <p>
+    <button type="button" onclick="createPrice()">Create</button>
+    </p>
+    <div class="pricedisplay"></div>
+    <script>
+        function createPrice(){
+            let price=document.getElementById("CandyPrice");
+            let display=document.querySelector(".pricedisplay");
+            if(price.value!=""){
+                display.style.color="green"
+            display.style.border="2px solid blue"
+            display.innerHTML=price.value
+            }
+            else{
+                display.style.color="red"
+                display.innerHTML="empty"
+            }
+           
+            
+            
+
+
+        }
+    </script>
+</body>
+</html>
