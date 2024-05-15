@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <input 
+           type="text" 
+           name="noofticket" 
+           placeholder="enter  no  of tickets" 
+           onkeyup="createTicket()"/>
+    </p>
+    <div id="display">
+
+    </div>
+
+    <script>
+        function  createTicket(){
+            let noOfTickets=document.querySelector('input[name="noofticket"]')
+            console.log(noOfTickets.value)
+            let display=document.querySelector("#display")
+            for(let i=0;i<noOfTickets.value;i++){
+                let btn=document.createElement('button')
+                btn.textContent=`Ticket:${i}`
+                display.appendChild(btn)
+
+            }
+        }
+    </script>
+</body>
+</html>
