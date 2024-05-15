@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="ph">
+        sample text 
+    </p>
+    <script>
+        let orgText;
+        let imgs=document.createElement('img')
+        imgs.src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg";
+        imgs.style.width="200px";
+        imgs.style.height='200px'
+        document.body.appendChild(imgs)
+
+        imgs.addEventListener('mouseover',e=>{
+            orgText=imgs.src
+            imgs.src="https://wallpapers.com/images/featured/nature-pictures-movusen45gmo3tv8.jpg"
+        })
+        imgs.addEventListener('mouseout',e=>{
+            imgs.src=orgText
+        })
+        let btn=document.createElement("button")
+
+        btn.textContent="Click Me"
+        document.body.appendChild(btn)
+
+        btn.addEventListener('click',function(e){
+            alert("testing")
+        })
+
+        //mouseenter
+        let p=document.querySelector('#ph') 
+        p.addEventListener('mouseenter',function(e){
+            orgText=p.innerHTML
+            p.innerHTML="the text is changed"
+        })
+               //mouseleave
+        p.addEventListener('mouseleave',e=>{
+            p.innerHTML=orgText
+        })
+    </script>
+</body>
+</html>
