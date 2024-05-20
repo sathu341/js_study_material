@@ -6,34 +6,60 @@ It resolves when all the input promises have resolved, or it rejects as soon as 
 If all promises fulfill successfully, Promise.all resolves with an array of their respective fulfillment values.
 If any of the input promises rejects, Promise.all immediately rejects with the reason of the first rejected promise.
 Example:
-javascript
-Copy code
-const promise1 = Promise.resolve(1);
+
+Example:1
 const promise2 = new Promise((resolve) => setTimeout(() => resolve(2), 1000));
 const promise3 = Promise.reject(new Error('Rejected'));
 
 Promise.all([promise1, promise2, promise3])
   .then(values => console.log(values))
   .catch(error => console.error(error.message)); // Output: Error: Rejected
+Example2:
+//promise all
+       const promise1=new Promise((resolve)=>{
+        setTimeout(()=>{
+            return resolve("promise1")
+        },1000)
+      })
+      
+      const promise2=new Promise((resolve,reject)=>
+      {
+        resolve("promise2")
+
+
+      })
+      const promise3=new Promise((resolve,reject)=>{
+         return resolve("  promise3")
+      })
+    
+       
+   
+
+      Promise.all([promise1,promise2,promise3])
+      .then((res)=>{
+        console.log(res)
+      })
+      .catch(err=>console.log(err))
+
+---------------------------------------------------------------------------------------------
 Promise.race:
 Promise.race takes an array of promises as input and returns a single promise.
 It resolves or rejects as soon as one of the input promises resolves or rejects.
 The result (fulfillment value or rejection reason) of the first settled promise (resolved or rejected) becomes the result of the Promise.race.
 Example:
-javascript
-Copy code
+
 const promise1 = new Promise((resolve) => setTimeout(() => resolve(1), 1000));
 const promise2 = new Promise((resolve) => setTimeout(() => resolve(2), 500));
 
 Promise.race([promise1, promise2])
   .then(value => console.log(value)); // Output: 2 (since promise2 resolves first)
+------------------------------------------------------------------------------------------------
 Promise.any (Introduced in ES2021):
 Promise.any takes an array of promises as input and returns a single promise.
 It resolves as soon as any of the input promises fulfill (resolve).
 If all input promises reject, Promise.any rejects with an AggregateError containing the reasons of all the rejections.
 Example:
-javascript
-Copy code
+
 const promise1 = new Promise((resolve, reject) => setTimeout(() => reject('Promise 1 rejected'), 1000));
 const promise2 = Promise.reject('Promise 2 rejected');
 const promise3 = new Promise((resolve) => setTimeout(() => resolve(3), 500));
