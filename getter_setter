@@ -1,0 +1,46 @@
+<script>
+class Person{
+    constructor(firstname,lastname,age,country,city){
+        this.fname=firstname;
+        this.lname=lastname;
+        this.age=age;
+        this.country=country;
+        this.city=city;
+        this.score=0;
+        this.skill=[];
+    }
+    //normale method 
+    getFullname(){
+        let fullname=`${this.fname}   ${this.lname}`;
+        console.log(fullname)
+    }
+    //getter 
+    get getScore(){
+        return this.score
+    }
+
+    get getSkill(){
+        return this.skill
+    }
+    set setScore(score){
+        this.score+=score;
+        //this.score=this.score+score
+    }
+    set setSkill(skill){
+        this.skill.push(skill)
+    }
+}
+
+//create  object 
+const person1=new Person("Raja","Kanth",25,"India","Ernakulam")
+person1.getFullname()//normal method 
+
+console.log(person1.getScore) // no need of  parenthesis  its getter method
+console.log(person1.getSkill)
+
+person1.setScore=1;
+person1.setSkill="HTML"
+person1.setSkill="Css"
+console.log(person1.getScore)
+console.log(person1.getSkill)
+</script>
