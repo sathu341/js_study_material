@@ -499,14 +499,14 @@ const weightOfObject = (mass, gravity = 9.81) => mass * gravity + ' N'
 console.log('Weight of an object in Newton: ', weightOfObject(100)) // 9.81 gravity at the surface of Earth
 console.log('Weight of an object in Newton: ', weightOfObject(100, 1.62)) // gravity at surface of Moon
 ```
-JavaScript Callback Functions
+***JavaScript Callback Functions:***
 What is a Callback Function?
 A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
 
 Why Use Callbacks?
 Callbacks are used to ensure that a function is not going to run before a task is completed but will run right after the task has completed. It helps in asynchronous programming, allowing functions to run after something else has happened.
 
-How to Define and Use Callback Functions:
+***How to Define and Use Callback Functions:***
 
 Defining a Callback Function:
 A callback function can be defined like any other function but is usually passed as an argument to another function.
@@ -514,9 +514,9 @@ A callback function can be defined like any other function but is usually passed
 Using Callback Functions:
 When you pass a callback function as an argument, you do not use parentheses. You only use parentheses when you call the function.
 
-Example 1: Synchronous Callback
+***Example 1: Synchronous Callback***
 
-
+```js
 function greet(name, callback) {
     console.log('Hello ' + name);
     callback();
@@ -527,13 +527,15 @@ function sayGoodbye() {
 }
 
 greet('John', sayGoodbye);
+```
+
 Explanation:
 
 greet is a function that takes a name and a callback function.
 sayGoodbye is a callback function that will be executed after the greeting.
-Example 2: Asynchronous Callback with setTimeout
+***Example 2: Asynchronous Callback with setTimeout:***
 
-
+```js
 function fetchData(callback) {
     setTimeout(function() {
         console.log('Data fetched from server');
@@ -546,6 +548,7 @@ function processData() {
 }
 
 fetchData(processData);
+```
 Explanation:
 
 fetchData simulates fetching data from a server and takes a callback function.
@@ -555,7 +558,7 @@ Example 3: Callback in Array Methods
 
 JavaScript's array methods like map, filter, and forEach often use callbacks.
 
-
+```js
 const numbers = [1, 2, 3, 4, 5];
 
 const doubled = numbers.map(function(num) {
@@ -563,6 +566,7 @@ const doubled = numbers.map(function(num) {
 });
 
 console.log(doubled); // [2, 4, 6, 8, 10]
+```
 Explanation:
 
 The map method iterates over each element in the array and applies the callback function to it, creating a new array with the returned values.
@@ -570,7 +574,7 @@ Handling Errors in Callbacks:
 
 When dealing with asynchronous operations, it's important to handle errors appropriately.
 
-
+```js
 function fetchData(callback) {
     setTimeout(function() {
         let error = false; // Change this to true to simulate an error
@@ -591,6 +595,7 @@ function processData(error, data) {
 }
 
 fetchData(processData);
+```
 Explanation:
 
 The callback function processData takes two arguments: error and data.
