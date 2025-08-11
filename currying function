@@ -1,0 +1,35 @@
+Currying in JavaScript is a functional programming technique that transforms a function with multiple arguments into a sequence of functions, each taking a single argument. This process allows for partial application of arguments, creating new, specialized functions by fixing some parameters. 
+How Currying Works:
+Original Function: You start with a function designed to take all its arguments at once.
+JavaScript
+
+    function multiply(a, b, c) {
+      return a * b * c;
+    }
+Curried Transformation: The function is transformed into a series of nested functions. Each inner function takes one argument and returns another function, until all arguments are provided. 
+JavaScript
+
+    function curriedMultiply(a) {
+      return function(b) {
+        return function(c) {
+          return a * b * c;
+        };
+      };
+    }
+Partial Application: You can then call the curried function step-by-step, providing arguments one at a time. Each call returns a new function that "remembers" the previously provided arguments due to closures.
+JavaScript
+
+    const multiplyByTwo = curriedMultiply(2); // Returns a function that takes b
+    const multiplyByTwoAndThree = multiplyByTwo(3); // Returns a function that takes c
+    const result = multiplyByTwoAndThree(4); // Returns 2 * 3 * 4 = 24
+Alternatively, you can call it all at once:
+JavaScript
+
+    const resultDirect = curriedMultiply(2)(3)(4); // Returns 24
+Benefits of Currying:
+Partial Application:
+Enables the creation of new functions by pre-filling some arguments, leading to more specialized and reusable functions.
+Code Reusability and Composability:
+Curried functions are inherently more modular and can be easily combined or composed with other functions.
+Flexibility:
+Allows for more flexible function invocation patterns and the creation of highly tailored functions for specific use cases.
