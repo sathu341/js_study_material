@@ -1,0 +1,146 @@
+1. Check if a number is prime
+
+Logic: A prime number has no divisors other than 1 and itself. So check from 2 up to the square root of the number.
+
+javascript
+function isPrime(num) {
+  if (num < 2) return false;
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) return false;
+  }
+  return true;
+}
+
+console.log(isPrime(17)); // true
+console.log(isPrime(15)); // false
+2. Reverse a string (without built-in reverse())
+
+Logic: Walk from the last character to the first, building a new string.
+
+javascript
+function reverseString(str) {
+  let reversed = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversed += str[i];
+  }
+  return reversed;
+}
+
+console.log(reverseString("hello")); // "olleh"
+3. Check if a string is a palindrome
+
+Logic: A palindrome reads the same forward and backward. Compare the string to its reverse.
+
+javascript
+function isPalindrome(str) {
+  const cleaned = str.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const reversed = cleaned.split("").reverse().join("");
+  return cleaned === reversed;
+}
+
+console.log(isPalindrome("Madam"));       // true
+console.log(isPalindrome("A man a plan a canal Panama")); // true
+console.log(isPalindrome("Hello"));       // false
+4. Fibonacci series
+
+Logic: Each number is the sum of the previous two. Start with 0 and 1.
+
+javascript
+function fibonacci(n) {
+  let a = 0, b = 1;
+  const series = [];
+  for (let i = 0; i < n; i++) {
+    series.push(a);
+    [a, b] = [b, a + b];   // swap using array destructuring
+  }
+  return series;
+}
+
+console.log(fibonacci(8)); // [0, 1, 1, 2, 3, 5, 8, 13]
+5. Factorial (recursion)
+
+Logic: n! = n × (n-1)!, with base case 0! = 1. Great intro to recursion.
+
+javascript
+function factorial(n) {
+  if (n === 0 || n === 1) return 1;  // base case
+  return n * factorial(n - 1);        // recursive case
+}
+
+console.log(factorial(5)); // 120
+6. FizzBuzz (very common interview logic test)
+
+Logic: Loop 1 to n. If divisible by both 3 and 5 → "FizzBuzz". By 3 only → "Fizz". By 5 only → "Buzz". Else the number itself. Order of checks matters — check "both" first.
+
+javascript
+function fizzBuzz(n) {
+  for (let i = 1; i <= n; i++) {
+    if (i % 15 === 0) console.log("FizzBuzz");
+    else if (i % 3 === 0) console.log("Fizz");
+    else if (i % 5 === 0) console.log("Buzz");
+    else console.log(i);
+  }
+}
+
+fizzBuzz(15);
+7. Find the largest number in an array (without Math.max)
+
+Logic: Assume the first element is the largest, then compare against every other element.
+
+javascript
+function findMax(arr) {
+  let max = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > max) max = arr[i];
+  }
+  return max;
+}
+
+console.log(findMax([3, 67, 12, 89, 5])); // 89
+8. Count vowels in a string
+
+Logic: Loop through each character, check if it exists in a set of vowels.
+
+javascript
+function countVowels(str) {
+  const vowels = "aeiouAEIOU";
+  let count = 0;
+  for (let char of str) {
+    if (vowels.includes(char)) count++;
+  }
+  return count;
+}
+
+console.log(countVowels("JavaScript Logic")); // 4
+9. Check for Armstrong number
+
+Logic: A number equals the sum of its own digits, each raised to the power of the number of digits. e.g. 153 = 1³ + 5³ + 3³.
+
+javascript
+function isArmstrong(num) {
+  const digits = String(num).split("");
+  const power = digits.length;
+  const sum = digits.reduce((acc, d) => acc + Math.pow(Number(d), power), 0);
+  return sum === num;
+}
+
+console.log(isArmstrong(153)); // true
+console.log(isArmstrong(123)); // false
+10. Bubble sort (understand how sorting works, not just .sort())
+
+Logic: Repeatedly compare adjacent elements, swap if out of order. Largest values "bubble" to the end each pass.
+
+javascript
+function bubbleSort(arr) {
+  const a = [...arr]; // don't mutate the original
+  for (let i = 0; i < a.length; i++) {
+    for (let j = 0; j < a.length - i - 1; j++) {
+      if (a[j] > a[j + 1]) {
+        [a[j], a[j + 1]] = [a[j + 1], a[j]]; // swap
+      }
+    }
+  }
+  return a;
+}
+
+console.log(bubbleSort([5, 3, 8, 1, 9, 2])); // [1, 2, 3, 5, 8, 9]
